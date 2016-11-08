@@ -14,6 +14,9 @@ import org.gstreamer.swing.VideoComponent;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+        //System.loadLibrary("gstreamer-0.10");
+
         args = Gst.init("PipelineLauncher", args);
         final String def = "rtspsrc location=rtsp://192.168.0.64:554/Streaming/channels/1 latency=0 ! decodebin ! ffmpegcolorspace name=testp";
         final Pipeline pipe = Pipeline.launch(def);

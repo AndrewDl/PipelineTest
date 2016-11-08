@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="gstreamer-java-1.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/gstreamer-java-1.5-sources.jar/gstreamer-java-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gstreamer-java-1.5-sources.jar/jna-3.2.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://D:/gstreamer/1.0/x86_64/lib/gstreamer-1.0" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

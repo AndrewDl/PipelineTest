@@ -1,0 +1,136 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>GstAdapter</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="GStreamer 0.10 Library Reference Manual"><link rel="up" href="gstreamer-base.html" title="GStreamer Base and Utillity Classes"><link rel="prev" href="gstreamer-libs-GstPushSrc.html" title="GstPushSrc"><link rel="next" href="gstreamer-libs-GstCollectPads.html" title="GstCollectPads"><meta name="generator" content="GTK-Doc V1.3 (XML mode)"><link rel="stylesheet" href="style.css" type="text/css"><link rel="part" href="gstreamer-libs.html" title="Part I. GStreamer Libraries"><link rel="chapter" href="gstreamer-base.html" title="GStreamer Base and Utillity Classes"><link rel="chapter" href="gstreamer-control.html" title="gstcontrol"><link rel="chapter" href="gstreamer-net.html" title="GStreamer Network Classes"><link rel="chapter" href="gstreamer-check.html" title="GStreamer Check Unit Testing"><link rel="part" href="gstreamer-libs-hierarchy.html" title="Part II. Object Hierarchy"><link rel="index" href="api-index.html" title="Index"><link rel="index" href="ix02.html" title="Index of deprecated symbols"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table class="navigation" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle"><td><a accesskey="p" href="gstreamer-libs-GstPushSrc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td><td><a accesskey="u" href="gstreamer-base.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td><td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td><th width="100%" align="center">GStreamer 0.10 Library Reference Manual</th><td><a accesskey="n" href="gstreamer-libs-GstCollectPads.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td></tr></table><div class="refentry" lang="en"><a name="gstreamer-libs-GstAdapter"></a><div class="titlepage"></div><div class="refnamediv"><table width="100%"><tr><td valign="top"><h2><span class="refentrytitle">GstAdapter</span></h2><p>GstAdapter &#8212; </p></td><td valign="top" align="right"></td></tr></table></div><div class="refsynopsisdiv"><h2>Synopsis</h2><pre class="synopsis">
+
+#include &lt;gst/base/gstadapter.h&gt;
+
+
+            <a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a>;
+<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a>* <a href="gstreamer-libs-GstAdapter.html#gst-adapter-new">gst_adapter_new</a>                 (void);
+void        <a href="gstreamer-libs-GstAdapter.html#gst-adapter-clear">gst_adapter_clear</a>               (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);
+void        <a href="gstreamer-libs-GstAdapter.html#gst-adapter-push">gst_adapter_push</a>                (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../gstreamer/gstreamer-GstBuffer.html#GstBuffer"
+>GstBuffer</a> *buf);
+const <a
+href="../glib/glib-Basic-Types.html#guint8"
+>guint8</a>* <a href="gstreamer-libs-GstAdapter.html#gst-adapter-peek">gst_adapter_peek</a>              (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> size);
+void        <a href="gstreamer-libs-GstAdapter.html#gst-adapter-flush">gst_adapter_flush</a>               (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flush);
+<a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a>       <a href="gstreamer-libs-GstAdapter.html#gst-adapter-available">gst_adapter_available</a>           (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);
+<a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a>       <a href="gstreamer-libs-GstAdapter.html#gst-adapter-available-fast">gst_adapter_available_fast</a>      (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);
+<a
+href="../glib/glib-Basic-Types.html#guint8"
+>guint8</a>*     <a href="gstreamer-libs-GstAdapter.html#gst-adapter-take">gst_adapter_take</a>                (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> nbytes);
+
+
+</pre></div><div class="refsect1" lang="en"><a name="id2911720"></a><h2>Description</h2><p>
+
+</p></div><div class="refsect1" lang="en"><a name="id2911729"></a><h2>Details</h2><div class="refsect2" lang="en"><a name="id2911735"></a><h3><a name="GstAdapter"></a>GstAdapter</h3><a class="indexterm" name="id2911745"></a><pre class="programlisting">typedef struct {
+  GObject	object;
+} GstAdapter;
+</pre><p>
+The opaque <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a> data structure.</p><p>
+
+</p></div><hr><div class="refsect2" lang="en"><a name="id2911772"></a><h3><a name="gst-adapter-new"></a>gst_adapter_new ()</h3><a class="indexterm" name="id2911782"></a><pre class="programlisting"><a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a>* gst_adapter_new                 (void);</pre><p>
+Creates a new <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></td><td> a new <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2911837"></a><h3><a name="gst-adapter-clear"></a>gst_adapter_clear ()</h3><a class="indexterm" name="id2911848"></a><pre class="programlisting">void        gst_adapter_clear               (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);</pre><p>
+Removes all buffers from <em class="parameter"><code>adapter</code></em>.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2911910"></a><h3><a name="gst-adapter-push"></a>gst_adapter_push ()</h3><a class="indexterm" name="id2911920"></a><pre class="programlisting">void        gst_adapter_push                (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../gstreamer/gstreamer-GstBuffer.html#GstBuffer"
+>GstBuffer</a> *buf);</pre><p>
+Adds the data from <em class="parameter"><code>buf</code></em> to the data stored inside <em class="parameter"><code>adapter</code></em> and takes
+ownership of the buffer.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><em class="parameter"><code>buf</code></em> :</span></td><td> a <a
+href="../gstreamer/gstreamer-GstBuffer.html#GstBuffer"
+><span class="type">GstBuffer</span></a> to add to queue in the adapter
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2912020"></a><h3><a name="gst-adapter-peek"></a>gst_adapter_peek ()</h3><a class="indexterm" name="id2912030"></a><pre class="programlisting">const <a
+href="../glib/glib-Basic-Types.html#guint8"
+>guint8</a>* gst_adapter_peek              (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> size);</pre><p>
+Gets the first <em class="parameter"><code>size</code></em> bytes stored in the <em class="parameter"><code>adapter</code></em>. The returned pointer is
+valid until the next function is called on the adapter.
+</p><p>
+Note that setting the returned pointer as the data of a <a
+href="../gstreamer/gstreamer-GstBuffer.html#GstBuffer"
+><span class="type">GstBuffer</span></a> is
+incorrect for general-purpose plugins. The reason is that if a downstream
+element stores the buffer so that it has access to it outside of the bounds
+of its chain function, the buffer will have an invalid data pointer after
+your element flushes the bytes. In that case you should use
+<a href="gstreamer-libs-GstAdapter.html#gst-adapter-take"><code class="function">gst_adapter_take()</code></a>, which returns a freshly-allocated buffer that you can set
+as <a
+href="../gstreamer/gstreamer-GstBuffer.html#GstBuffer"
+><span class="type">GstBuffer</span></a> malloc_data.
+</p><p>
+Returns <a
+href="../glib/glib-Standard-Macros.html#NULL:CAPS"
+><span class="type">NULL</span></a> if <em class="parameter"><code>size</code></em> bytes are not available.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><em class="parameter"><code>size</code></em> :</span></td><td> the number of bytes to peek
+</td></tr><tr><td><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></td><td> a pointer to the first <em class="parameter"><code>size</code></em> bytes of data, or NULL.
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2912196"></a><h3><a name="gst-adapter-flush"></a>gst_adapter_flush ()</h3><a class="indexterm" name="id2912207"></a><pre class="programlisting">void        gst_adapter_flush               (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flush);</pre><p>
+Flushes the first <em class="parameter"><code>flush</code></em> bytes in the <em class="parameter"><code>adapter</code></em>. The caller must ensure that
+at least this many bytes are available.
+</p><p>
+See also: <a href="gstreamer-libs-GstAdapter.html#gst-adapter-peek"><code class="function">gst_adapter_peek()</code></a>.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><em class="parameter"><code>flush</code></em> :</span></td><td> the number of bytes to flush
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2912313"></a><h3><a name="gst-adapter-available"></a>gst_adapter_available ()</h3><a class="indexterm" name="id2912323"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a>       gst_adapter_available           (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);</pre><p>
+Gets the maximum amount of bytes available, that is it returns the maximum
+value that can be supplied to <a href="gstreamer-libs-GstAdapter.html#gst-adapter-peek"><code class="function">gst_adapter_peek()</code></a> without that function
+returning NULL.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></td><td> number of bytes available in <em class="parameter"><code>adapter</code></em>
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2912410"></a><h3><a name="gst-adapter-available-fast"></a>gst_adapter_available_fast ()</h3><a class="indexterm" name="id2912421"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a>       gst_adapter_available_fast      (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter);</pre><p>
+Gets the maximum number of bytes available without the need to do expensive
+operations (like copying the data into a temporary buffer).</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></td><td> number of bytes available in <em class="parameter"><code>adapter</code></em> without expensive operations
+</td></tr></tbody></table></div></div><hr><div class="refsect2" lang="en"><a name="id2912497"></a><h3><a name="gst-adapter-take"></a>gst_adapter_take ()</h3><a class="indexterm" name="id2912507"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#guint8"
+>guint8</a>*     gst_adapter_take                (<a href="gstreamer-libs-GstAdapter.html#GstAdapter">GstAdapter</a> *adapter,
+                                             <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> nbytes);</pre><p>
+Returns a freshly allocated buffer containing the first <em class="parameter"><code>nbytes</code></em> bytes of the
+<em class="parameter"><code>adapter</code></em>.
+</p><p>
+Caller owns returned value.</p><p>
+
+</p><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr><td><span class="term"><em class="parameter"><code>adapter</code></em> :</span></td><td> a <a href="gstreamer-libs-GstAdapter.html#GstAdapter"><span class="type">GstAdapter</span></a>
+</td></tr><tr><td><span class="term"><em class="parameter"><code>nbytes</code></em> :</span></td><td> the number of bytes to take
+</td></tr><tr><td><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></td><td> oven-fresh hot data, or <a
+href="../glib/glib-Standard-Macros.html#NULL:CAPS"
+><span class="type">NULL</span></a> if <em class="parameter"><code>nbytes</code></em> bytes are not available
+</td></tr></tbody></table></div></div></div></div><table class="navigation" width="100%" summary="Navigation footer" cellpadding="2" cellspacing="0"><tr valign="middle"><td align="left"><a accesskey="p" href="gstreamer-libs-GstPushSrc.html"><b>&lt;&lt; GstPushSrc</b></a></td><td align="right"><a accesskey="n" href="gstreamer-libs-GstCollectPads.html"><b>GstCollectPads &gt;&gt;</b></a></td></tr></table></body></html>

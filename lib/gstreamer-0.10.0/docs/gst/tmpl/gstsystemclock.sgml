@@ -1,0 +1,30 @@
+<!-- ##### SECTION Title ##### -->
+GstSystemClock
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT GstSystemClock ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gst_system_clock_obtain ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
